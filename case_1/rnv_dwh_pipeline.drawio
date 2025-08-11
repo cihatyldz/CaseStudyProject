@@ -1,0 +1,55 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36" version="28.0.9">
+  <diagram id="rnv-dwh" name="RNV DWH Star Schema">
+    <mxGraphModel dx="1426" dy="743" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="fact" value="fact_order_line — PK: fact_id order_no, ordoro_id FKs: product_key, supplier_key, marketplace_key, order_status_key, line_status_key, customer_key, date_key metrics: item_sale_price, item_tax, shipping_sale, total_per_sku, net_revenue, transport_cost_actual, gross_margin_est times: order_place_time, order_prep_time, order_delivery_time, order_total_time flags: is_clogistique_order" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="700" y="380" width="520" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="dim_date" value="dim_date — PK: date_key date_value, day_of_week, week_of_year, month, quarter, year, month_name, year_month" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="100" y="80" width="350" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="dim_product" value="dim_product — PK: product_key sku, title, category" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="1220" y="80" width="300" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="dim_supplier" value="dim_supplier — PK: supplier_key supplier_name" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="1330" y="610" width="300" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="dim_marketplace" value="dim_marketplace — PK: marketplace_key mkp_name" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="100" y="620" width="300" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="dim_order_status" value="dim_order_status — PK: order_status_key order_status" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="100" y="360" width="300" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="dim_line_status" value="dim_line_status — PK: line_status_key line_status" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="1370" y="360" width="300" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="dim_customer" value="dim_customer — PK: customer_key email, avg_session_length, time_on_app, time_on_website, length_of_membership, yearly_amount_spent" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="700" y="80" width="420" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="" style="endArrow=block;html=1;strokeColor=#6c8ebf;" parent="1" source="dim_date" target="fact" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="endArrow=block;html=1;strokeColor=#6c8ebf;" parent="1" source="dim_product" target="fact" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="" style="endArrow=block;html=1;strokeColor=#6c8ebf;" parent="1" source="dim_supplier" target="fact" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="" style="endArrow=block;html=1;strokeColor=#6c8ebf;" parent="1" source="dim_marketplace" target="fact" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="" style="endArrow=block;html=1;strokeColor=#6c8ebf;" parent="1" source="dim_order_status" target="fact" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="" style="endArrow=block;html=1;strokeColor=#6c8ebf;" parent="1" source="dim_line_status" target="fact" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="" style="endArrow=block;html=1;strokeColor=#6c8ebf;" parent="1" source="dim_customer" target="fact" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
