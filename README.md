@@ -120,6 +120,7 @@ rnv_case/
 ├── case_1/          # E-commerce Customer Analytics
 │   ├── rnv_case1customer.ipynb    # Customer behavior analysis
 │   ├── rnv_case1order.ipynb       # Order data processing
+│   ├── rnv_kpi.pbix               # Order power bi
 │   └── ecom_outputs/              # Generated visualizations
 ├── case_2/          # SQL Analytics & Data Engineering
 │   └── rnv_case2.sql              # Advanced SQL solutions
